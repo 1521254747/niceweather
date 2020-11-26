@@ -11,17 +11,12 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.fragment.app.Fragment;
-
 import com.NiceWeather.android.R;
-
 import org.litepal.crud.DataSupport;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.NiceWeather.android.db.City;
 import com.NiceWeather.android.db.County;
 import com.NiceWeather.android.db.Province;
@@ -185,12 +180,6 @@ public class ChooseAreaFragment extends Fragment {
 
     }
 
-    private void closeProgressDialog() {
-        if(progressDialog !=null){
-            progressDialog.dismiss();
-        }
-    }
-
     private void showProgressDialog() {
         if(progressDialog ==null){
             progressDialog = new ProgressDialog(getActivity());
@@ -199,6 +188,14 @@ public class ChooseAreaFragment extends Fragment {
         }
         progressDialog.show();
     }
+
+    private void closeProgressDialog() {
+        if(progressDialog !=null){
+            progressDialog.dismiss();
+        }
+    }
+
+
 
 
 }
