@@ -29,12 +29,11 @@
             android:background="@drawable/telegram">
         </Button>
 
-        <ListView
-            android:id="@+id/list_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </ListView>
-
     </RelativeLayout>
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
 
 </LinearLayout>

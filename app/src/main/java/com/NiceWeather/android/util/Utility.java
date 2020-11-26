@@ -1,11 +1,8 @@
 package com.NiceWeather.android.util;
-
 import android.text.TextUtils;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import com.NiceWeather.android.db.City;
 import com.NiceWeather.android.db.County;
 import com.NiceWeather.android.db.Province;

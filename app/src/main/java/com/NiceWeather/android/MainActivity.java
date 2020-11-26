@@ -1,4 +1,4 @@
-package com.NiceWeather.android.util;
+package com.NiceWeather.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
