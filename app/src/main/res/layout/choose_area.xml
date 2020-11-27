@@ -16,8 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:textColor="#fff"
-            android:textSize="20sp">
-        </TextView>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/back_button"
@@ -26,14 +25,12 @@
             android:layout_marginLeft="10dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/telegram">
-        </Button>
+            android:background="@drawable/ic_back" />
 
     </RelativeLayout>
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

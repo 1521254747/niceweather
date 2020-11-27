@@ -1,8 +1,8 @@
 package com.NiceWeather.android.db;
 
-import org.litepal.crud.DataSupport;
+import org.litepal.crud.LitePalSupport;
 
-public class City extends DataSupport {
+public class City extends LitePalSupport {
     private  int id;
     private String cityName;
     private int cityCode;
@@ -27,7 +27,7 @@ public class City extends DataSupport {
         this.cityCode = cityCode;
     }
     public int getProvinceId(){
-        return  cityCode;
+        return  provinceId;
     }
     public  void setProvinceId(int provinceId){
         this.provinceId = provinceId;

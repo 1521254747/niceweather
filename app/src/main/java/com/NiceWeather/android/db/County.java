@@ -1,10 +1,10 @@
 package com.NiceWeather.android.db;
 
-import org.litepal.crud.DataSupport;
+import org.litepal.crud.LitePalSupport;
 
-public class County extends DataSupport {
+public class County extends LitePalSupport {
     private int id;
-    private  String countNAme;
+    private  String countyName;
     private  String weatherId;
     private int cityId;
 
@@ -15,11 +15,11 @@ public class County extends DataSupport {
         this.id = id;
     }
 
-    public String getCountNAme(){
-        return  countNAme;
+    public String getCountName(){
+        return  countyName;
     }
     public  void setCountNAme(String countNAme){
-        this.countNAme = countNAme;
+        this.countyName = countNAme;
     }
 
     public String getWeatherId(){
