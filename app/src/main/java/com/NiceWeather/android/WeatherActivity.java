@@ -5,6 +5,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.NiceWeather.android.gson.Forecast;
 import com.NiceWeather.android.gson.Weather;
+import com.NiceWeather.android.service.AutoUpdateService;
 import com.NiceWeather.android.util.HttpUtil;
 import com.NiceWeather.android.util.Utility;
 
@@ -106,10 +108,13 @@ private Button navButton;
                             editor.putString("weather",responseText);
                             editor.apply();
                             showWeatherInfo(weather);
+                            Intent intent= new Intent(WeatherActivity.this,AutoUpdateService.class);
+                            startService(intent);
                         }else{
                             Toast.makeText(WeatherActivity.this,"获取天气信息失败",Toast.LENGTH_SHORT).show();
                         }
                         swipeRefresh.setRefreshing(false);
+
                     }
                 });
             }

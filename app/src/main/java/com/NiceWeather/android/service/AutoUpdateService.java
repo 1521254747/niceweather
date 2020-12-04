@@ -44,8 +44,8 @@ public class AutoUpdateService extends Service {
         if(weatherString!=null){
             Weather weather = Utility.handleWeatherResponse(weatherString);
             String weatherId = weather.basic.weatherId;
-            String wewatherUrl = "http://guolin.tech/api/weather?city="+weatherId+"&key=bc0418b57b2d4918819d3974ac1285d9";
-            HttpUtil.sendOkHttpRequest(weatherId, new Callback() {
+            String weatherUrl = "http://guolin.tech/api/weather?city="+weatherId+"&key=bc0418b57b2d4918819d3974ac1285d9";
+            HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
                 @Override
                 public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                         String responseText = response.body().string();
@@ -68,14 +68,18 @@ public class AutoUpdateService extends Service {
         String requestBingPic = "http://guolin.tech/api/bing_pic";
         HttpUtil.sendOkHttpRequest(requestBingPic, new Callback() {
             @Override
-            public void onFailure(@NotNull Call call, @NotNull IOException e) {
-
-            }
-
-            @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-
+                String bingPic = response.body().string();
+                SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(AutoUpdateService.this).edit();
+                editor.putString("bing_pic",bingPic);
+                editor.apply();
             }
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                e.printStackTrace();
+            }
+
+
         });
     }
 
